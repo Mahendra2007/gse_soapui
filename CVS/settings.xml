@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite id="3efaea14-0afe-41f4-813c-4faa8641309c" name="Full error codes TestSuite" xmlns:con="http://eviware.com/soapui/config">
+<con:testSuite id="3efaea14-0afe-41f4-813c-4faa8641309c" name="CVS" xmlns:con="http://eviware.com/soapui/config">
   <con:description>The test suite generated for the REST service [Full error codes]</con:description>
   <con:settings>
-    <con:setting id="3efaea14-0afe-41f4-813c-4faa8641309cfileName">Full-error-codes-TestSuite</con:setting>
+    <con:setting id="3efaea14-0afe-41f4-813c-4faa8641309cfileName">CVS</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:runType>SEQUENTIAL</con:runType>
