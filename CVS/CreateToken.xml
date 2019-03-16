@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="b45f55be-106c-4064-aad2-97b272e1ecac" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Create Token" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="b45f55be-106c-4064-aad2-97b272e1ecac" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CreateToken" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:description>The test case generated for the REST resource [Errors] located at [/customer/value/application/support/errors]</con:description>
   <con:settings>
     <con:setting id="61df5889-4895-4d5f-8dda-49a3af5b7253fileName">Errors-TestCase</con:setting>
-    <con:setting id="b45f55be-106c-4064-aad2-97b272e1ecacfileName">Create-Token</con:setting>
+    <con:setting id="b45f55be-106c-4064-aad2-97b272e1ecacfileName">CreateToken</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="Request 1" id="569997d2-516b-4655-9fa6-1fce7c3e45dc">
