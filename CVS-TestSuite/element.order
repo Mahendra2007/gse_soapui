@@ -11,3 +11,4 @@ GetCustomerValueWithExpiredTokenWrongMlife-TestCase.xml
 GetCustomerValueWithValidTokenAndCorrectMlife-TestCase.xml
 CVSHealthCheckWithInvalidToken-TestCase.xml
 CVSHealthCheckWithWithoutToken-TestCase.xml
+TestCase-1.xml

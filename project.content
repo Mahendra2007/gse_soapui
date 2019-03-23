@@ -19,6 +19,7 @@ CVS-TestSuite\GetCustomerValueWithExpiredTokenWrongMlife-TestCase.xml
 CVS-TestSuite\GetCustomerValueWithValidTokenAndCorrectMlife-TestCase.xml
 CVS-TestSuite\CVSHealthCheckWithInvalidToken-TestCase.xml
 CVS-TestSuite\CVSHealthCheckWithWithoutToken-TestCase.xml
+CVS-TestSuite\TestCase-1.xml
 Copy-of-CVS-TestSuite\Errors-TestCase.xml
 Copy-of-CVS-TestSuite\CVS-Info-TestCase.xml
 Copy-of-CVS-TestSuite\CreateTokenWithCorrectCredentials-TestCase.xml
