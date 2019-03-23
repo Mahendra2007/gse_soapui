@@ -1,0 +1,89 @@
+PO PH II
+
+Need access to update/modify
+
+Mystique
+Patron
+DMP
+ICE
+
+
+--------------------
+Execute API without Any/key
+Execute API without Any/version
+Execute API without Any/authorization
+
+Verify with Enable PO
+Verify without Disable PO
+Try to book reservation with transient user and verify
+Verify with Comp
+Verify without Comp
+Verify without Booking limit
+Verify with booking limit
+Verify Customer with segment
+Verify Customer without segment
+Verify PO price updated in Opera
+Cancel resrevation with PO
+Cancel resrevation without PO
+Modify resrevation with PO
+Modify resrevation without PO
+Verify PO with various various Tiers
+Scenario related booking limit
+Verify rate getting as per rate configured in Mystique - For transient and mlife
+Verify rate getting as per rate configured in Mystique - For transient and mlife as per program
+
+
+-------------------------
+
+49622160
+     72207122
+     67925633
+     46021472
+      1901277
+     43609255
+     76179441
+      8919804
+     76021473
+     46969440
+     51357309
+     41518522
+     50147088
+     33131354
+     66528719
+     49392469
+     50281183
+     71992877
+     21247217
+     46941440
+     41598694
+     20007974
+     67436130
+     71756411
+     59139276
+     48913838
+     47510249
+     16967158
+     49660550
+     42862574
+     67052492
+      7086480
+     62704414
+     35715603
+     50589210
+      4859498
+      1357984
+     60238283
+     60141230
+     59436787
+     61050668
+     42026872
+     61552597
+
+
+
+
+
+
+
+
+

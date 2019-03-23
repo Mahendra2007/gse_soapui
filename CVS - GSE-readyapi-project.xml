@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5f438812-e279-4e13-93d6-05da6290c1df" created="2.6.0" activeEnvironment="Default environment" name="CVS - GSE" resourceRoot="${projectDir}" updated="2.6.0 2019-01-14T14:47:06Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerUIAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value="XML"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="true"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Slack Channel(s)" value="#random"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Test Suite Tags" value=""/>
+  <con:entry key="Select Report Type" value="JUnit-Style report for automation"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Test Suite" value="&lt;all>"/>
+  <con:entry key="Run in-process" value="false"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Test Case Tags" value=""/>
+  <con:entry key="Export JUnit Results with test properties" value="true"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Test Case" value="&lt;all>"/>
+  <con:entry key="Slack Access Token" value="xoxb-503641540306-571913591491-aX2O7Hslpx9Mig8mC4RP2afZ"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value="C:\Program Files\SmartBear\ReadyAPI-2.6.0\bin"/>
+  <con:entry key="Environment" value="Default environment"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value="${WORKSPACE}"/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value="-Wxoxb-503641540306-571913591491-aX2O7Hslpx9Mig8mC4RP2afZ/#random"/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
+    <con:setting id="5f438812-e279-4e13-93d6-05da6290c1dffileName">CVS---GSE</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer>
+    <con:oAuth2Profile>
+      <con:name>test</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenURI>https://10.192.132.131/oauth/token</con:accessTokenURI>
+      <con:accessToken>631b63d4-f13a-48a3-ad88-72ad41d6470f</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus>
+      <con:accessTokenIssuedTime>1553017012</con:accessTokenIssuedTime>
+      <con:manualAccessTokenExpirationTime/>
+      <con:manualAccessTokenExpirationTimeUnit>SECONDS</con:manualAccessTokenExpirationTimeUnit>
+      <con:clientID>generic</con:clientID>
+      <con:resourceOwnerName>generic</con:resourceOwnerName>
+      <con:resourceOwnerPassword>Passwordone1!</con:resourceOwnerPassword>
+      <con:clientSecret>Passwordone1!</con:clientSecret>
+      <con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:scope/>
+      <con:accessTokenExpirationTime>300</con:accessTokenExpirationTime>
+      <con:useAuthHeader>true</con:useAuthHeader>
+      <con:applyJwtAssertion>true</con:applyJwtAssertion>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+  </con:oAuth2ProfileContainer>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// def token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// def token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// def headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository>
+    <con:oAuth20AuthEntry>
+      <con:name>test</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenURI>https://10.192.132.131/oauth/token</con:accessTokenURI>
+      <con:accessToken>631b63d4-f13a-48a3-ad88-72ad41d6470f</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus>
+      <con:accessTokenIssuedTime>1553017012</con:accessTokenIssuedTime>
+      <con:manualAccessTokenExpirationTime/>
+      <con:manualAccessTokenExpirationTimeUnit>SECONDS</con:manualAccessTokenExpirationTimeUnit>
+      <con:clientID>generic</con:clientID>
+      <con:resourceOwnerName>generic</con:resourceOwnerName>
+      <con:resourceOwnerPassword>Passwordone1!</con:resourceOwnerPassword>
+      <con:clientSecret>Passwordone1!</con:clientSecret>
+      <con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:scope/>
+      <con:accessTokenExpirationTime>300</con:accessTokenExpirationTime>
+      <con:useAuthHeader>true</con:useAuthHeader>
+      <con:applyJwtAssertion>true</con:applyJwtAssertion>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+  </con:authRepository>
+  <con:tags/>
+  <con:interface xsi:type="con:RestService" id="0e726414-3986-4902-9ad3-e772a084ce9e" wadlVersion="http://wadl.dev.java.net/2009/02" name="CVS - GSE" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings>
+      <con:setting id="0e726414-3986-4902-9ad3-e772a084ce9efileName">CVS---GSE</con:setting>
+    </con:settings>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>http://10.192.132.129</con:endpoint>
+    </con:endpoints>
+    <con:resource name="CVS Info" path="/actuator/info" id="6de05343-0e4f-478a-9256-ce45eebe4099">
+      <con:settings>
+        <con:setting id="ae3f165c-5570-4ae9-b04e-a0df1a4a87a6fileName">Errors</con:setting>
+        <con:setting id="cb8fb3a6-fcb9-4394-8ae8-cddd60665579fileName">Create-Token</con:setting>
+        <con:setting id="d2f3cb30-4bb1-4871-b73b-141780031bc6fileName">Health-Check</con:setting>
+        <con:setting id="6de05343-0e4f-478a-9256-ce45eebe4099fileName">CVS-Info</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="CVS Info" id="f2e87e4e-0fb6-48b0-80c2-5affff29b839" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>404 400 401</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>0</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://10.192.132.131</con:endpoint>
+          <con:request>grant_type=client_credentials</con:request>
+          <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+          <con:credentials>
+            <con:username>generic</con:username>
+            <con:password>Passwordone1!</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:preemptive>true</con:preemptive>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Preemptive</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Create Token" path="/oauth/token" id="cb8fb3a6-fcb9-4394-8ae8-cddd60665579">
+      <con:settings>
+        <con:setting id="ae3f165c-5570-4ae9-b04e-a0df1a4a87a6fileName">Errors</con:setting>
+        <con:setting id="cb8fb3a6-fcb9-4394-8ae8-cddd60665579fileName">Create-Token</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="GetToken" id="f2e87e4e-0fb6-48b0-80c2-5affff29b839" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>404 400 401</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>0</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://10.192.132.131</con:endpoint>
+          <con:request>grant_type=client_credentials</con:request>
+          <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+          <con:credentials>
+            <con:username>generic</con:username>
+            <con:password>Passwordone1!</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:preemptive>true</con:preemptive>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Preemptive</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Errors" path="/customer/value/application/support/errors" id="ae3f165c-5570-4ae9-b04e-a0df1a4a87a6">
+      <con:settings>
+        <con:setting id="ae3f165c-5570-4ae9-b04e-a0df1a4a87a6fileName">Errors</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="Errors" id="f2e87e4e-0fb6-48b0-80c2-5affff29b839" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.192.132.129</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Get Customer Value" path="/pp/v1.0.1/customer/value/70750759/001" id="b53e6772-0b1a-4d22-8d77-4bedc4fde937">
+      <con:settings>
+        <con:setting id="ae3f165c-5570-4ae9-b04e-a0df1a4a87a6fileName">Errors</con:setting>
+        <con:setting id="cb8fb3a6-fcb9-4394-8ae8-cddd60665579fileName">Create-Token</con:setting>
+        <con:setting id="b53e6772-0b1a-4d22-8d77-4bedc4fde937fileName">Get-Customer-Value</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="GetCutomerValue" id="f2e87e4e-0fb6-48b0-80c2-5affff29b839" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>404 400 401</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>0</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://10.192.132.131</con:endpoint>
+          <con:request>grant_type=client_credentials</con:request>
+          <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+          <con:credentials>
+            <con:username>generic</con:username>
+            <con:password>Passwordone1!</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:preemptive>true</con:preemptive>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Preemptive</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Health Check" path="/actuator/health" id="d2f3cb30-4bb1-4871-b73b-141780031bc6">
+      <con:settings>
+        <con:setting id="ae3f165c-5570-4ae9-b04e-a0df1a4a87a6fileName">Errors</con:setting>
+        <con:setting id="cb8fb3a6-fcb9-4394-8ae8-cddd60665579fileName">Create-Token</con:setting>
+        <con:setting id="d2f3cb30-4bb1-4871-b73b-141780031bc6fileName">Health-Check</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="HealthCheck" id="f2e87e4e-0fb6-48b0-80c2-5affff29b839" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>404 400 401</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>0</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/vnd.spring-boot.actuator.v2+json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://10.192.132.131</con:endpoint>
+          <con:request>grant_type=client_credentials</con:request>
+          <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+          <con:credentials>
+            <con:username>generic</con:username>
+            <con:password>Passwordone1!</con:password>
+            <con:selectedAuthProfile>test</con:selectedAuthProfile>
+            <con:preemptive>true</con:preemptive>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="3efaea14-0afe-41f4-813c-4faa8641309c" name="CVS">
+    <con:description>The test suite generated for the REST service [Full error codes]</con:description>
+    <con:settings>
+      <con:setting id="3efaea14-0afe-41f4-813c-4faa8641309cfileName">CVS</con:setting>
+    </con:settings>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:properties>
+      <con:property>
+        <con:name>MyToken</con:name>
+        <con:value>8ae7e4f5-b99b-4c43-b9a3-ca6181ca34df</con:value>
+      </con:property>
+    </con:properties>
+    <con:reportParameters/>
+    <con:testCase id="61df5889-4895-4d5f-8dda-49a3af5b7253" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Errors TestCase" searchProperties="true" timeout="0">
+      <con:description>The test case generated for the REST resource [Errors] located at [/customer/value/application/support/errors]</con:description>
+      <con:settings>
+        <con:setting id="61df5889-4895-4d5f-8dda-49a3af5b7253fileName">Errors-TestCase</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Request 1" id="d9d98bbe-4646-4b38-bb60-c2b2e8fba62c">
+        <con:settings/>
+        <con:config service="CVS - GSE" resourcePath="/customer/value/application/support/errors" methodName="Errors" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.192.132.129</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="b45f55be-106c-4064-aad2-97b272e1ecac" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CreateToken" searchProperties="true" timeout="0">
+      <con:description>The test case generated for the REST resource [Errors] located at [/customer/value/application/support/errors]</con:description>
+      <con:settings>
+        <con:setting id="61df5889-4895-4d5f-8dda-49a3af5b7253fileName">Errors-TestCase</con:setting>
+        <con:setting id="b45f55be-106c-4064-aad2-97b272e1ecacfileName">CreateToken</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Request 1" id="569997d2-516b-4655-9fa6-1fce7c3e45dc">
+        <con:settings/>
+        <con:config service="CVS - GSE" resourcePath="/customer/value/application/support/errors" methodName="Errors" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.192.132.129</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="518a3778-4081-4b95-8b30-6fc35666f7d8" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CVS Info TestCase" searchProperties="true" timeout="0">
+      <con:description>The test case generated for the REST resource [CVS Info] located at [/actuator/info]</con:description>
+      <con:settings>
+        <con:setting id="518a3778-4081-4b95-8b30-6fc35666f7d8fileName">CVS-Info-TestCase</con:setting>
+      </con:settings>
+      <con:testStep type="restrequest" name="Request 1" id="79e837f0-c524-4868-9c38-2b9f82fb86df">
+        <con:settings/>
+        <con:config service="CVS - GSE" resourcePath="/actuator/info" methodName="CVS Info" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://10.192.132.131</con:endpoint>
+            <con:request>grant_type=client_credentials</con:request>
+            <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+            <con:credentials>
+              <con:username>generic</con:username>
+              <con:password>Passwordone1!</con:password>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:preemptive>true</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="a2a61196-3c7b-46d7-a6b0-61baeadfd22a" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Create Token TestCase" searchProperties="true" timeout="0">
+      <con:description>The test case generated for the REST resource [Create Token] located at [/oauth/token]</con:description>
+      <con:settings>
+        <con:setting id="a2a61196-3c7b-46d7-a6b0-61baeadfd22afileName">Create-Token-TestCase</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="GetToken" id="bc5042d4-8171-482a-bc8f-a51e9124fc05">
+        <con:settings/>
+        <con:config service="CVS - GSE" resourcePath="/oauth/token" methodName="GetToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetToken" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://10.192.132.131</con:endpoint>
+            <con:request>grant_type=client_credentials</con:request>
+            <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+            <con:credentials>
+              <con:username>generic</con:username>
+              <con:password>Passwordone1!</con:password>
+              <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+              <con:preemptive>true</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>Preemptive</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script" id="4335af87-4974-4419-a089-ee39441f7f5e">
+        <con:settings/>
+        <con:config>
+          <script>//${#TestSuite#GetToken}
+
+//def testSuiteProperty = testRunner.testCase.testSuite.getPropertyValue( "access_token" )
+
+//def testCaseProperty = testRunner.testCase.getPropertyValue("access_token")
+
+
+//log.info testCaseProperty
+//log.iinfo(arg0, arg1)
+
+
+//testRunner.testCase.testSuite.project.name
+
+//#######################################
+
+import groovy.json.JsonSlurper
+
+responseContent = testRunner.testCase.getTestStepByName("GetToken").getPropertyValue("response")
+slurperresponse = new JsonSlurper().parseText(responseContent)
+log.info (slurperresponse.access_token)
+
+//Set a test suite property
+testRunner.testCase.testSuite.setPropertyValue( "MyToken", slurperresponse.access_token )</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="GetHealthCheck" id="debf49de-734a-42b4-b0d5-7b182dbe4722">
+        <con:settings/>
+        <con:config service="CVS - GSE" resourcePath="/actuator/health" methodName="HealthCheck" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetHealthCheck" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://10.192.132.131</con:endpoint>
+            <con:request>grant_type=client_credentials</con:request>
+            <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+            <con:credentials>
+              <con:username>generic</con:username>
+              <con:password>Passwordone1!</con:password>
+              <con:selectedAuthProfile>test</con:selectedAuthProfile>
+              <con:preemptive>false</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>bc5042d4-8171-482a-bc8f-a51e9124fc05</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="6b979a28-83f1-4722-9e45-b90bc18ee83a" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Errors TestCase" searchProperties="true" timeout="0">
+      <con:description>The test case generated for the REST resource [Errors] located at [/customer/value/application/support/errors]</con:description>
+      <con:settings>
+        <con:setting id="6b979a28-83f1-4722-9e45-b90bc18ee83afileName">Errors-TestCase1</con:setting>
+      </con:settings>
+      <con:testStep type="restrequest" name="Request 1" id="2e3575d0-fff4-4678-9b86-b951d886477d">
+        <con:settings/>
+        <con:config service="CVS - GSE" resourcePath="/customer/value/application/support/errors" methodName="Errors" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.192.132.129</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="ebc2c8b0-ce22-4120-969a-163a1b486f4c" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get Customer Value TestCase" searchProperties="true" timeout="0">
+      <con:description>The test case generated for the REST resource [Get Customer Value] located at [/pp/v1.0.1/customer/value/70750759/001]</con:description>
+      <con:settings>
+        <con:setting id="ebc2c8b0-ce22-4120-969a-163a1b486f4cfileName">Get-Customer-Value-TestCase</con:setting>
+      </con:settings>
+      <con:testStep type="restrequest" name="Request 1" id="4c1cb039-9375-468c-9f70-0dd2ea3fa061">
+        <con:settings/>
+        <con:config service="CVS - GSE" resourcePath="/pp/v1.0.1/customer/value/70750759/001" methodName="GetCutomerValue" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://10.192.132.131</con:endpoint>
+            <con:request>grant_type=client_credentials</con:request>
+            <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+            <con:credentials>
+              <con:username>generic</con:username>
+              <con:password>Passwordone1!</con:password>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:preemptive>true</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>Preemptive</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="898ecd47-f276-4498-8e15-f399291afb4e" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Health Check TestCase" searchProperties="true" timeout="0">
+      <con:description>The test case generated for the REST resource [Health Check] located at [/actuator/health]</con:description>
+      <con:settings>
+        <con:setting id="898ecd47-f276-4498-8e15-f399291afb4efileName">Health-Check-TestCase</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Request 1" id="71278568-c5cc-4967-9e3b-7ea61080b289">
+        <con:settings/>
+        <con:config service="CVS - GSE" resourcePath="/actuator/health" methodName="HealthCheck" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://10.192.132.131</con:endpoint>
+            <con:request>grant_type=client_credentials</con:request>
+            <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+            <con:credentials>
+              <con:username>generic</con:username>
+              <con:password>Passwordone1!</con:password>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:preemptive>false</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+  </con:testSuite>
+</con:soapui-project>

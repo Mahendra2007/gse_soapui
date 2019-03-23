@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/pp/v1.0.1/customer/value/" path="/pp/v1.0.1/customer/value/" id="65e0600f-7a98-4217-9b99-89922b37cadb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="65e0600f-7a98-4217-9b99-89922b37cadbfileName">%2Fpp%2Fv1.0.1%2Fcustomer%2Fvalue%2F</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="17cc650c-ce0c-4c12-85f6-f69cf3275a96" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GET Request" id="6ce3b64d-3a27-4622-ac2e-924f56f31cf5" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://10.192.132.131</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

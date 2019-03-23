@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="3f27c681-433f-4759-9a42-5e157bacdc63" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Errors TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [Errors] located at [/customer/value/application/support/errors]</con:description>
+  <con:settings>
+    <con:setting id="61df5889-4895-4d5f-8dda-49a3af5b7253fileName">Errors-TestCase</con:setting>
+    <con:setting id="3f27c681-433f-4759-9a42-5e157bacdc63fileName">Errors-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Request 1" id="b2995773-42d4-45e4-bebc-33478a671ce7">
+    <con:settings/>
+    <con:config service="CVS - GSE" resourcePath="/customer/value/application/support/errors" methodName="Errors" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://10.192.132.129</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

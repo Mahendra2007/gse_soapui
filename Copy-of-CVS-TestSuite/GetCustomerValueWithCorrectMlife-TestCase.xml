@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="6bce7877-8c8d-4bbe-9d19-7180eb5bb21e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="GetCustomerValueWithCorrectMlife TestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [Get Customer Value] located at [/pp/v1.0.1/customer/value/70750759/001]</con:description>
+  <con:settings>
+    <con:setting id="ebc2c8b0-ce22-4120-969a-163a1b486f4cfileName">GetCustomerValueWithCorrectMlife-TestCase</con:setting>
+    <con:setting id="69cc1552-53bd-4ee9-8570-07dd9f9637adfileName">GetCustomerValueWithCorrectMlife-TestCase</con:setting>
+    <con:setting id="6bce7877-8c8d-4bbe-9d19-7180eb5bb21efileName">GetCustomerValueWithCorrectMlife-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="GetCV" id="5e6b5e84-8168-4fb2-9e7a-c144982b14b3">
+    <con:settings/>
+    <con:config service="REST Service 3" resourcePath="/pp/v1.0.1/customer/value/19524602" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetCV" id="cdcc1b3a-becd-4b81-94cc-2de1cd955b41" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://10.192.132.131</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://10.192.132.131/pp/v1.0.1/customer/value/707507159</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>test</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

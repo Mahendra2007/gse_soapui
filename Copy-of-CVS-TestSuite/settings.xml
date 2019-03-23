@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="418778b5-0d21-46cc-8d42-62dcaf5d8a69" name="Copy of CVS TestSuite" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test suite generated for the REST service [Full error codes]</con:description>
+  <con:settings>
+    <con:setting id="3efaea14-0afe-41f4-813c-4faa8641309cfileName">CVS-TestSuite</con:setting>
+    <con:setting id="418778b5-0d21-46cc-8d42-62dcaf5d8a69fileName">Copy-of-CVS-TestSuite</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties>
+    <con:property>
+      <con:name>MyToken</con:name>
+      <con:value>8ae7e4f5-b99b-4c43-b9a3-ca6181ca34df</con:value>
+    </con:property>
+    <con:property>
+      <con:name>TestSuiteResult</con:name>
+      <con:value>OK</con:value>
+    </con:property>
+  </con:properties>
+  <con:setupScript>testSuite.setPropertyValue("TestSuiteResult", "OK")</con:setupScript>
+  <con:reportParameters/>
+</con:testSuite>

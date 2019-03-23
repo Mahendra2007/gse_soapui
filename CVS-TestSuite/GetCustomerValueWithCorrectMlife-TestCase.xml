@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="69cc1552-53bd-4ee9-8570-07dd9f9637ad" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="GetCustomerValueWithCorrectMlife TestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [Get Customer Value] located at [/pp/v1.0.1/customer/value/70750759/001]</con:description>
+  <con:settings>
+    <con:setting id="ebc2c8b0-ce22-4120-969a-163a1b486f4cfileName">GetCustomerValueWithCorrectMlife-TestCase</con:setting>
+    <con:setting id="69cc1552-53bd-4ee9-8570-07dd9f9637adfileName">GetCustomerValueWithCorrectMlife-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="GetCV" id="5fbc0113-c4c6-4765-9c16-4d6a925ae000">
+    <con:settings/>
+    <con:config service="REST Service 3" resourcePath="/pp/v1.0.1/customer/value/19524602" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetCV" id="cdcc1b3a-becd-4b81-94cc-2de1cd955b41" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://10.192.132.131</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://10.192.132.131/pp/v1.0.1/customer/value/707507159</con:originalUri>
+        <con:assertion type="Simple Contains" id="e23a2bb1-009b-464f-ba8f-844e6ba6aae1" name="Contains">
+          <con:configuration>
+            <token/>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="d917cf8b-2fcf-4e45-82fe-43d2192ba2d9" name="Check for existence of [segment]">
+          <con:configuration>
+            <path>$['customer']['customerValues'][0]['value']['customerGrade']['segment']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>test</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

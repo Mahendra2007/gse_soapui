@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/oauth/token" path="/oauth/token" id="f1c9dbe2-d8e1-4f1a-b5a3-91c09f769570" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f1c9dbe2-d8e1-4f1a-b5a3-91c09f769570fileName">%2Foauth%2Ftoken</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST" id="c4820150-38a7-4856-bb28-d87a2a961c52" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:tok="https://10.192.132.131/oauth/token">tok:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:tok="https://10.192.132.131/oauth/token">tok:Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="POST Request" id="a8ddc8cc-1e9e-46b6-a530-d43187afa930" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://10.192.132.131</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

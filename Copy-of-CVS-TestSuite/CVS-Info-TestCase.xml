@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="3141f726-e407-43de-8c41-5d7d6f803e91" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="CVS Info TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [CVS Info] located at [/actuator/info]</con:description>
+  <con:settings>
+    <con:setting id="518a3778-4081-4b95-8b30-6fc35666f7d8fileName">CVS-Info-TestCase</con:setting>
+    <con:setting id="3141f726-e407-43de-8c41-5d7d6f803e91fileName">CVS-Info-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Request 1" id="2faabe1f-3a1c-4667-810e-811e0546287a">
+    <con:settings/>
+    <con:config service="CVS - GSE" resourcePath="/actuator/info" methodName="CVS Info" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://10.192.132.131</con:endpoint>
+        <con:request>grant_type=client_credentials</con:request>
+        <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+        <con:credentials>
+          <con:username>generic</con:username>
+          <con:password>Passwordone1!</con:password>
+          <con:selectedAuthProfile>test</con:selectedAuthProfile>
+          <con:preemptive>true</con:preemptive>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

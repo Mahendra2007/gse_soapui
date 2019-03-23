@@ -1,0 +1,13 @@
+Errors-TestCase.xml
+CVS-Info-TestCase.xml
+CreateTokenWithCorrectCredentials-TestCase.xml
+CreateTokenWithWrongUsername-TestCase.xml
+CreateTokenWithWrongPwd-TestCase.xml
+CreateTokenWithWrongUsernameAndPwd-TestCase.xml
+CVSHealthCheck-TestCase.xml
+GetCustomerValueWithWrongMlife-TestCase.xml
+GetCustomerValueWithCorrectMlife-TestCase.xml
+GetCustomerValueWithExpiredTokenWrongMlife-TestCase.xml
+GetCustomerValueWithValidTokenAndCorrectMlife-TestCase.xml
+CVSHealthCheckWithInvalidToken-TestCase.xml
+CVSHealthCheckWithWithoutToken-TestCase.xml

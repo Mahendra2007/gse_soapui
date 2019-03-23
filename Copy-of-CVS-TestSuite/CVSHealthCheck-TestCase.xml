@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="eed7dcc2-355a-4212-88e7-4ceb325dedee" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="CVSHealthCheck TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [Create Token] located at [/oauth/token]</con:description>
+  <con:settings>
+    <con:setting id="a2a61196-3c7b-46d7-a6b0-61baeadfd22afileName">CVSHealthCheck-TestCase</con:setting>
+    <con:setting id="eed7dcc2-355a-4212-88e7-4ceb325dedeefileName">CVSHealthCheck-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="GetToken" id="610ecdca-5be1-44bc-9256-2ef6d03ceb80">
+    <con:settings/>
+    <con:config service="CVS - GSE" resourcePath="/oauth/token" methodName="GetToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetToken" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://10.192.132.131</con:endpoint>
+        <con:request>grant_type=client_credentials</con:request>
+        <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+        <con:credentials>
+          <con:username>generic</con:username>
+          <con:password>Passwordone1!</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:preemptive>true</con:preemptive>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Preemptive</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="df75f4fd-d309-471f-8b28-9822ef2a72c1">
+    <con:settings/>
+    <con:config>
+      <script>// Import the required classes
+import com.eviware.soapui.impl.rest.actions.oauth.OltuOAuth2ClientFacade;
+import com.eviware.soapui.support.editor.inspectors.auth.TokenType;
+import com.eviware.soapui.model.support.ModelSupport;
+
+// Set up variables
+def project = ModelSupport.getModelItemProject(context.getModelItem());
+//def authProfile = project.getAuthRepository().getEntry("OAuth 2");
+def authProfile = project.getAuthRepository().getEntry("test");
+def oldToken = authProfile.getAccessToken();
+def tokenType = TokenType.ACCESS;
+
+// Create a facade object
+def oAuthFacade = new OltuOAuth2ClientFacade(tokenType);
+
+// Request an access token in headless mode
+oAuthFacade.requestAccessToken(authProfile, true, true);
+
+// Wait until the access token gets updated
+//while(oldToken == authProfile.getAccessToken()) {
+//}
+//The sleep method can be used instead of a while loop
+sleep(3000);
+
+// Post the info to the log
+log.info("Set new token: " + authProfile.getAccessToken());
+//#######################################
+
+//import groovy.json.JsonSlurper
+
+//responseContent = testRunner.testCase.getTestStepByName("GetToken").getPropertyValue("response")
+//slurperresponse = new JsonSlurper().parseText(responseContent)
+//log.info (slurperresponse.access_token)
+
+//Set a test suite property
+//testRunner.testCase.testSuite.setPropertyValue( "MyToken", slurperresponse.access_token )</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetHealthCheck" id="2f96afc7-d794-4e25-8cc1-134075593213">
+    <con:settings/>
+    <con:config service="CVS - GSE" resourcePath="/actuator/health" methodName="HealthCheck" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetHealthCheck" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://10.192.132.131</con:endpoint>
+        <con:request>grant_type=client_credentials</con:request>
+        <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="434af1d4-cb02-4d33-a72a-70a4b2ba245f" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>300</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>generic</con:username>
+          <con:password>Passwordone1!</con:password>
+          <con:selectedAuthProfile>test</con:selectedAuthProfile>
+          <con:preemptive>false</con:preemptive>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>bc5042d4-8171-482a-bc8f-a51e9124fc05</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

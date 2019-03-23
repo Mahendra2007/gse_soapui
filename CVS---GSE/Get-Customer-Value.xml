@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Get Customer Value" path="/pp/v1.0.1/customer/value/70750759/001" id="b53e6772-0b1a-4d22-8d77-4bedc4fde937" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ae3f165c-5570-4ae9-b04e-a0df1a4a87a6fileName">Errors</con:setting>
+    <con:setting id="cb8fb3a6-fcb9-4394-8ae8-cddd60665579fileName">Create-Token</con:setting>
+    <con:setting id="b53e6772-0b1a-4d22-8d77-4bedc4fde937fileName">Get-Customer-Value</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GetCutomerValue" id="f2e87e4e-0fb6-48b0-80c2-5affff29b839" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>404 400 401</con:status>
+      <con:params/>
+      <con:element xmlns:err="http://10.192.132.129/customer/value/application/support/errors">err:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>0</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="eb505801-4d6c-44fe-b11c-731ce6d3a402" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://10.192.132.131</con:endpoint>
+      <con:request>grant_type=client_credentials</con:request>
+      <con:originalUri>http://10.192.132.129/customer/value/application/support/errors</con:originalUri>
+      <con:credentials>
+        <con:username>generic</con:username>
+        <con:password>Passwordone1!</con:password>
+        <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+        <con:preemptive>true</con:preemptive>
+        <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+        <con:authType>Preemptive</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

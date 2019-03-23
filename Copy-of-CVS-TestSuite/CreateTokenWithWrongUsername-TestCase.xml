@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="6f1c43c6-4a66-494d-be6a-0dcfc5d014e4" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="CreateTokenWithWrongUsername TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [Errors] located at [/customer/value/application/support/errors]</con:description>
+  <con:settings>
+    <con:setting id="61df5889-4895-4d5f-8dda-49a3af5b7253fileName">Errors-TestCase</con:setting>
+    <con:setting id="b45f55be-106c-4064-aad2-97b272e1ecacfileName">CreateToken-TestCase</con:setting>
+    <con:setting id="8b613654-186c-41f7-a657-358987c89853fileName">CreateTokenWithWrongUsername-TestCase</con:setting>
+    <con:setting id="6f1c43c6-4a66-494d-be6a-0dcfc5d014e4fileName">CreateTokenWithWrongUsername-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="CreateToken" id="9cf91f84-8bf1-4fe6-855e-00e133744127">
+    <con:settings/>
+    <con:config service="REST Service 1" resourcePath="/oauth/token" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CreateToken" id="a8ddc8cc-1e9e-46b6-a530-d43187afa930" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://10.192.132.131</con:endpoint>
+        <con:request>grant_type=client_credentials</con:request>
+        <con:originalUri>https://10.192.132.131/oauth/token</con:originalUri>
+        <con:credentials>
+          <con:username>wrongusername</con:username>
+          <con:password>Passwordone1!</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

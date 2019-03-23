@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/pp/v1.0.1/customer/value/707507159" path="/pp/v1.0.1/customer/value/19524602" id="2fa913ee-dc8b-4777-9803-4d075b357564" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2fa913ee-dc8b-4777-9803-4d075b357564fileName">%2Fpp%2Fv1.0.1%2Fcustomer%2Fvalue%2F707507159</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="bf888290-444c-4233-9fb3-ef1f39d8445a" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>401 404</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://10.192.132.131/pp/v1.0.1/customer/value/707507159">ns:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://10.192.132.131/pp/v1.0.1/customer/value/707507159">ns:Response</con:element>
+    </con:representation>
+    <con:request name="GET Request" id="cdcc1b3a-becd-4b81-94cc-2de1cd955b41" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://10.192.132.131</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

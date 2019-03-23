@@ -1,0 +1,48 @@
+Regional CVS meet with Margo
+
+p1 is live only for ICE ?
+
+Segment offer
+Comp offer
+Cash offer?
+tier level offer?
+rank based pricing
+segment based pricing
+BAR pricing
+total list of offers?
+Casino Program?
+room floor?
+PO only for casino 
+
+-----------------------------
+
+Any CVS API?
+List of CS API
+CSV file format?
+Can we upload CSV file into shared location for QA testing?
+API doc with payloads for CVS and CS
+Log location for CSV?
+CS server box?
+
+------------------------------
+F798	Perpetual offer Phase 2(Part 1): Multi Property Dynamic Calendar View
+F924	Perpetual offer phase 2 (Part 2): New/Existing Program/Offer retrieval API changes
+
+------------------------------
+
+
+Comp Max	
+Rate Max	
+Week Limit	
+Day Limit	
+Book Window Comp	
+Comp Max Contig	Book Window Rate	
+							
+# comps allowed per week	
+# rates allowed per week	
+# combo comp/rate allowed per week	
+# resv allowed per day	
+# comps allowed within 90 day booking window	
+# of consecutive days comps are allowed	
+# rates allowed within 90 day booking window	
+
