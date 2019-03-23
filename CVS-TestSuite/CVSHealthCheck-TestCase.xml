@@ -44,7 +44,7 @@ def project = ModelSupport.getModelItemProject(context.getModelItem());
 def authProfile = project.getAuthRepository().getEntry("test");
 def oldToken = authProfile.getAccessToken();
 def tokenType = TokenType.ACCESS;
-
+//test committe
 // Create a facade object
 def oAuthFacade = new OltuOAuth2ClientFacade(tokenType);
 
